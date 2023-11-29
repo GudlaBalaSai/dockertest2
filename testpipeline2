@@ -27,7 +27,7 @@ pipeline {
             }
          stage('Deploy cointainer') { 
             steps {
-                sh "docker run --rm -dit --name mycon3 -p 8300:80 $registry:v$BUILD_NUMBER"
+                sh "docker run --rm -dit --name mycont3 -p 8300:80 $registry:v$BUILD_NUMBER"
             }
         }
         
