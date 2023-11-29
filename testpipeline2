@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Cloning out Git repo') { 
             steps {
-                git credentialsId: 'GitHub-id', url: 'https://github.com/vinaykumar331/dockertest1.git'
+                git credentialsId: 'GitHub-id', url: 'https://github.com/GudlaBalaSai/dockertest2.git'
             }
         }
         stage('Buildig our Image') { 
@@ -18,8 +18,8 @@ pipeline {
         }
         stage('Push Image to DockerHub & clean up locally') { 
             steps {
-                withCredentials([string(credentialsId: 'DockerHub_id', variable: 'Dockerhub_Credentials')]) {
-                sh "docker login -u vinaykumar331 -p ${Dockerhub_Credentials}"
+                withCredentials([string(credentialsId: ' DockerHub_id', variable: 'Dockerhub_credentials')]) {
+                sh "docker login -u balasai123 -p ${Dockerhub_credentials}"
                 sh "docker push $registry:v$BUILD_NUMBER"
                 sh "docker rmi $registry:v$BUILD_NUMBER"
                 }
