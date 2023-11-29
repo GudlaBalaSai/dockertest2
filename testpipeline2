@@ -1,6 +1,6 @@
 pipeline {
     environment {
-       registry = 'balasai123/app'
+       registry = 'balasai123/web'
        dockerhost = '10.1.1.205'
            }
        
